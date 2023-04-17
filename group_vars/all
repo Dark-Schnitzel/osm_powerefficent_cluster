@@ -7,4 +7,11 @@ mod_tile_dir: "/data/lib/mod_tile"
 renderdir: "/data/run/renderd"
 geofabrik_urls: "https://download.geofabrik.de/europe/germany-latest.osm.pbf"
 
+# postgesql settings
+postgresql_data_dir: /data/db/
+
+# renderd.conf settings
+renderd_maxzoom: 12
+renderd_tilesize: 256
+
 

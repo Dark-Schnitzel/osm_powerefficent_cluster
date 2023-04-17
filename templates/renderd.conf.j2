@@ -1,0 +1,18 @@
+[renderd]
+num_threads={{ ansible_processor_vcpus }}
+tile_dir={{ mod_tile_dir }}
+stats_file={{ renderdir }}/renderd.stats
+
+[mapnik]
+plugins_dir=/usr/lib/mapnik/3.0/input
+font_dir=/usr/share/fonts/truetype
+font_dir_recurse=1
+
+[ajt]
+URI=/hot/
+TILEDIR={{ mod_tile_dir }}
+XML={{ build_dir }}/openstreetmap-carto/mapnik.xml
+HOST=localhost
+TILESIZE={{ renderd_tilesize }}
+MAXZOOM={{ renderd_maxzoom }}
+
