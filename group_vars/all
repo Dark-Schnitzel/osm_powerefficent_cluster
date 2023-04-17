@@ -1,0 +1,8 @@
+renderaccount: "renderaccount"
+data_dir: "/var/tmp/data"
+build_dir: "/var/tmp/src"
+mod_tile_dir: "/var/lib/mod_tile"
+renderdir: "/var/run/renderd"
+geofabrik_urls: "https://download.geofabrik.de/europe/germany-latest.osm.pbf"
+
+

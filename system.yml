@@ -1,0 +1,15 @@
+- hosts: all
+  tasks:
+    - name: set hostname
+      hostname: 
+        name: "{{ inventory_hostname }}"
+
+    - name: Update system
+      register: update_system
+      apt: 
+        upgrade: dist 
+        force_apt_get: yes
+
+    - name: reboot if needed
+      when: update_system.changed
+      reboot:

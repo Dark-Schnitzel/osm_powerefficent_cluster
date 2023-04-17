@@ -1,0 +1,3 @@
+# One .yml to rule them all
+- import_playbook: system.yml      # Configure Linux system
+- import_playbook: base.yml

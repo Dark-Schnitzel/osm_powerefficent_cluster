@@ -1,0 +1,6 @@
+all:
+  children:
+    render:
+      hosts:
+        svl001rndap001:
+          ansible_connection: "IP"
