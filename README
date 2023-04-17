@@ -2,6 +2,21 @@
 Configure n openstreetmap render servers. Uses ansible to build a consistent testing environment.
 Make it possible to use different Servers for Database, Webserver and Renderservers
 
+## Targeted Platforms
+Arm or x86_64 Budget Hardware to build a cheap, energyefficent Rendercluster.
+
+## Requirements
+Ansible on your control node to setup the servers
+1 or more spare Servers, Supported/Tested Operating Systems:
+- Ubuntu 20.04
+
+## How to use
+Edit the inventory according to your needs. 
+Adjust Group_vars also.
+
+Then run ansible on your inventory:
+ansible-playbook master.yml
+
 # Status Quo
 Configure 1 Rendernode via this Instruction: https://switch2osm.org/serving-tiles/manually-building-a-tile-server-20-04-lts/
 Work in Progress.
