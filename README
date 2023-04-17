@@ -1,0 +1,9 @@
+## Goal of this Repo
+Configure n openstreetmap render servers. Uses ansible to build a consistent testing environment.
+Make it possible to use different Servers for Database, Webserver and Renderservers
+
+# Status Quo
+Configure 1 Rendernode via this Instruction: https://switch2osm.org/serving-tiles/manually-building-a-tile-server-20-04-lts/
+Work in Progress.
+
+# Performance Comparions (Tiles/Watt)
