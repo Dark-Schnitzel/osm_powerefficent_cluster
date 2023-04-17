@@ -3,4 +3,4 @@ all:
     render:
       hosts:
         svl001rndap001:
-          ansible_connection: "IP"
+          ansible_host: 192.168.10.30
