@@ -4,6 +4,10 @@
       hostname: 
         name: "{{ inventory_hostname }}"
 
+    - name: install default packages
+      package:
+        name: "screen, powertop"
+
     - name: Update system
       register: update_system
       apt: 

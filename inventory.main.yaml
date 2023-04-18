@@ -1,6 +1,24 @@
 all:
   children:
-    render:
+    database:
       hosts:
         svl001rndap001:
           ansible_host: 192.168.10.30
+    webserver:
+      hosts:
+        svl001rndap001:
+          ansible_host: 192.168.10.30
+    tirex_server:
+      hosts:
+        svl001rndap001:
+          ansible_host: 192.168.10.30
+    tirex_backends:
+      hosts:
+        svl001rndap002:
+          ansible_host: 192.168.10.31
+        svl001rndap003:
+          ansible_host: 192.168.10.32
+        svl001rndap004:
+          ansible_host: 192.168.10.33
+        svl001rndap005:
+          ansible_host: 192.168.10.34

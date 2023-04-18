@@ -7,6 +7,11 @@ mod_tile_dir: "/data/lib/mod_tile"
 renderdir: "/data/run/renderd"
 geofabrik_urls: "https://download.geofabrik.de/europe/germany-latest.osm.pbf"
 
+# tirex settings
+tirex_lib_dir: "/var/lib/tirex"
+tirex_log_dir: "/var/log/tirex"
+tirex_run_dir: "/var/run/tirex"
+
 # postgesql settings
 postgresql_data_dir: /data/db/
 

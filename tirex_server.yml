@@ -1,0 +1,32 @@
+- hosts: tirex_server
+  tasks:
+    - name: clone tirex github
+      git:
+        repo: 'https://github.com/geofabrik/tirex'
+        dest: "/tmp/tirex"
+
+    - name: Install Dependencies
+      package:
+        name: "libipc-sharelite-perl, libjson-perl, libgd-perl, libwww-perl"
+    - name: build tirex
+      shell: cd /tmp/tirex && make -j "{{ ansible_processor_vcpus }}" && make install && make install-example-map
+    - name: create tirex user
+      user:
+        name: tirex
+    - name: create tirex dirs
+      file:
+        path: "{{ item }}"
+        state: directory
+        owner: tirex
+        group: tirex
+      with_items:
+        - "{{ tirex_lib_dir }}"
+        - "{{ tirex_log_dir }}"
+        - "{{ tirex_run_dir }}"
+    - name: template tirex.conf
+      template:
+        src: tirex.conf.j2
+        dest: /etc/tirex/tirex.conf
+    - name: start tirex
+      shell: sudo -u tirex tirex-master && sudo -u tirex tirex-backend-manager
+

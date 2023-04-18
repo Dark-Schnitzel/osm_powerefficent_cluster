@@ -1,0 +1,27 @@
+- hosts: webserver
+  tasks:
+    - name: install apache2
+      package:
+        name: apache2
+
+    - name: create mod_tile dir
+      file:
+        path: /var/lib/mod_tile
+        state: directory
+
+    - name: template mod_tile for apache
+      register: mod_tile_conf
+      template:
+        src: mod_tile.conf.j2
+        dest: /etc/apache2/conf-available/mod_tile.conf
+
+    - name: enable mod_tile conf for apache
+      when: mod_tile_conf.changed
+      shell: a2enconf mod_tile
+
+    - name: reload apache
+      systemd: 
+        name: apache2
+        state: restarted
+
+
